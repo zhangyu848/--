@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main() {
+   int a[10][10];
+   int i=0,j=0;
+   int n=10,m=1;
+   int p=0;
+   a[0][0]=1;
+   for( i = 0; i < 10; i++) {
+         a[i][0] = 1;
+         a[i][i] = 1;
+   }
+    for( i = 2; i < 10; i++) {
+         for( j = 1; j < i; j++) {
+              a[i][j] = a[i-1][j-1] + a[i-1][j];
+         }
+    }
+   m=0;
+   printf("%d",a[6][3]);
+    for( i = 0; i < 10; i++) {
+        printf("\n");
+      for( j = 0; j < i+1; j++) {
+            printf("%d\t",a[i][j]);
+        } 
+    }  
+    return 0;
+}
